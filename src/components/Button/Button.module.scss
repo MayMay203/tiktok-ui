@@ -10,6 +10,7 @@
     background-color: var(--white);
     border: 1px solid transparent;
     user-select: none;
+    cursor: pointer;
 
 
     + .wrapper{
@@ -32,7 +33,6 @@
     font-weight: 700;
 
     &:hover{
-        cursor: pointer;
         border-color: rgba(22, 24, 35, 0.2);
         background-color: rgb(255, 255, 255);
     }
@@ -44,7 +44,6 @@
     border-color: var(--primary);
 
     &:hover{
-        cursor: pointer;
         border-color: var(--primary);
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), rgb(254, 44, 85);
     }
@@ -55,7 +54,6 @@
     border-color: currentColor;
 
     &:hover{
-        cursor: pointer;
         border-color: currentColor;
         background-color: rgba(254, 44, 85, 0.06);
     }
@@ -79,12 +77,17 @@
     border: 1px solid rgba(22, 24, 35, 0.12);
 
     &:hover{
-        cursor: pointer;
         background-color: rgba(22, 24, 35, 0.03);
     }
 }
 
 .icon + .title, .title + .icon{
     margin-left: 8px;
+}
+
+.icon{
+    display: inline-block;
+    width: 24px;
+    text-align: center;
 }
 
