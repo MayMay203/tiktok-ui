@@ -3,20 +3,15 @@ import 'tippy.js/dist/tippy.css'; // optional
 import {
   faCircleXmark,
   faEllipsisVertical,
-  faGear,
   faKeyboard,
-  faLanguage,
   faMagnifyingGlass,
-  faMoon,
   faPlus,
-  faQuestionCircle,
   faRightFromBracket,
   faRss,
   faSignIn,
   faSpinner,
-  faUsersViewfinder,
 } from '@fortawesome/free-solid-svg-icons';
-import { faBookmark, faFileVideo, faMessage, faMoneyBill1, faUser } from '@fortawesome/free-regular-svg-icons';
+import { faBookmark, faFileVideo, faMoneyBill1, faUser } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import HeadlessTippy from '@tippyjs/react/headless';
@@ -28,7 +23,8 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
-
+import { DarkModeIcon, FeedbackIcon, LanguageIcon, MessageIcon, SettingIcon } from '~/components/Icons';
+import Image from '~/components/Image';
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
   {
@@ -37,7 +33,7 @@ const MENU_ITEMS = [
     href: 'https://www.tiktok.com/live/creators/vi-VN/?enter_from=more&lang=en&region=VN',
   },
   {
-    icon: <FontAwesomeIcon icon={faLanguage} />,
+    icon: <LanguageIcon />,
     title: 'English',
     children: {
       title: 'Language',
@@ -56,7 +52,7 @@ const MENU_ITEMS = [
     },
   },
   {
-    icon: <FontAwesomeIcon icon={faQuestionCircle} />,
+    icon: <FeedbackIcon />,
     title: 'Feedback and help',
     to: '/feedback',
   },
@@ -65,7 +61,7 @@ const MENU_ITEMS = [
     title: 'Keyboard Shortcuts',
   },
   {
-    icon: <FontAwesomeIcon icon={faMoon} />,
+    icon: <DarkModeIcon/>,
     title: 'Dark mode',
     children: {
       title: 'Dark mode',
@@ -125,7 +121,7 @@ function Header() {
       href: 'https://www.tiktok.com/coin/unavailable?isUserExist=true&isUserForbidden=true&isUserReady=true',
     },
     {
-      icon: <FontAwesomeIcon icon={faGear} />,
+      icon: <SettingIcon />,
       title: 'Settings',
       to: '/setting',
     },
@@ -182,7 +178,7 @@ function Header() {
 
               <Tippy content="Inbox" placement="bottom">
                 <button class={cx('msg-btn')}>
-                  <FontAwesomeIcon icon={faMessage}></FontAwesomeIcon>
+                  <MessageIcon />
                 </button>
               </Tippy>
             </>
@@ -196,13 +192,14 @@ function Header() {
               </Button>
             </>
           )}
-          <Menu items={currentUser?userMenu:MENU_ITEMS} onChange={handleMenuChange}>
+          <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
             {currentUser ? (
-              <img
+              <Image
                 className={cx('user-avatar')}
-                src="https://p9-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/df6bef0752d7599f485d741b23fd2094.jpeg?lk3s=a5d48078&nonce=82050&refresh_token=938e6a9de0fa235caec0071dfcdbef9b&x-expires=1719910800&x-signature=3%2F959TgDBFWHwtGHfnxGGvMbs%2FA%3D&shp=a5d48078&shcp=81f88b70"
-                alt="Nguyễn Văn A"
-              ></img>
+                src="http://p9-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/df6bef0752d7599f485d741b23fd2094.jpeg?lk3s=a5d48078&nonce=82050&refresh_token=938e6a9de0fa235caec0071dfcdbef9b&x-expires=1719910800&x-signature=3%2F959TgDBFWHwtGHfnxGGvMbs%2FA%3D&shp=a5d48078&shcp=81f88b70"
+                alt="Le Thi Hong Nhung"
+                // fallBack="https://fullstack.edu.vn/assets/f8-icon-lV2rGpF0.png"
+              />
             ) : (
               <button className={cx('more-btn')}>
                 <FontAwesomeIcon icon={faEllipsisVertical} />
