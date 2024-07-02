@@ -17,6 +17,7 @@ function Button({
   rightIcon,
   leftIcon,
   onClick,
+  separate = false,
   ...passProps
 }) {
   let Comp = 'button';
@@ -48,6 +49,7 @@ function Button({
     text,
     disabled,
     rounded,
+    separate
   });
   return (
       <Comp className={classes} {...props}>
