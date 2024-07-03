@@ -4,10 +4,11 @@
     justify-content: center;
     font-size: 1.6rem;
     min-width: 100px;
-    padding: 9px 16px;
-    font-weight: 700;
+    padding: 8px 14px;
+    color: var(--text-color);
+    font-weight: 600;
     font-family: "TikTokFont", "sans-serif";
-    border-radius: 4px;
+    border-radius: 2px;
     background-color: var(--white);
     border: 1px solid transparent;
     user-select: none;
@@ -74,7 +75,7 @@
 }
 
 .text{
-    min-width: 110px;
+    min-width: 108px;
     border: 1px solid rgba(22, 24, 35, 0.12);
 
     &:hover{
@@ -83,7 +84,7 @@
 }
 
 .icon + .title, .title + .icon{
-    margin-left: 8px;
+    margin-left: 7px;
 }
 
 .icon{

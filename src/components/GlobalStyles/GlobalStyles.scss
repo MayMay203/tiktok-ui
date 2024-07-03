@@ -13,7 +13,7 @@
     --white: #fff;
     // Default layout
     --default-layout-header-height: 60px;
-    --default-layout-width: 1230px;
+    --default-layout-width: 1240px;
     --default-layout-horizontal-spacer: 24px;
     --text-input: rgb(22, 24, 35);;
     --text-color: #333;
@@ -52,6 +52,15 @@ html{
     font-family: 'TikTokFont';
     src: url('/assets/fonts/TikTokFont-Semibold.woff2');
     font-weight: 600;
+}
+
+// Scroll bar
+body::-webkit-scrollbar {
+  width: 8px;
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(217, 212, 212);
 }
 
 //Custom tippy tooltip
