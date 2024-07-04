@@ -4,18 +4,25 @@
     --search-button-width: 52px;
 
     width: 100%;
-    height: var(--default-layout-header-height, 60px);
+    height: var(--default-layout-header-height);
+    position: fixed;
+    top: 0;
+    left: 0;
     box-shadow: rgb(0 0 0 / 12%) 0px 1px 1px;
-    display: flex;
-    justify-content: center;
+    background-color: var(--white);
+    padding-right: 24px;
+    padding-left: 16px;
 }
 
 .inner{
     height: 100%;
-    width: var(--default-layout-width, 1240px);
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.logo-link{
+    display: flex;
 }
 
 .more-btn{
@@ -29,7 +36,7 @@
 .actions{
     display: flex;
     align-items: center;
-
+    
 }
 
 .user-avatar{

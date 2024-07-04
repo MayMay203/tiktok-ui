@@ -35,7 +35,7 @@
     }
 
     input::placeholder{
-        color: var(--text-input);
+        color: rgba(22, 24, 35, 0.7);
         opacity: 1;
     }
 
@@ -54,8 +54,8 @@
     }
 
     &:hover > .search-btn{
-        background-color: rgba(22, 24, 35, 0.03);
-        color: rgba(22, 24, 35, 0.75);
+        background-color: rgba(22, 24, 35, 0.05);
+        color: rgb(15 17 24);
     }
 }
 

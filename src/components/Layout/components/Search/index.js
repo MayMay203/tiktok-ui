@@ -45,48 +45,56 @@ function Search() {
   const handleHide = () => {
     setShowResult(false);
   };
-  return (
-    <HeadlessTippy
-      visible={showResult && searchResult.length > 0}
-      interactive
-      render={(attrs) => (
-        <div className={cx('search-results')} tabIndex="-1" {...attrs}>
-          <PopperWrapper>
-            <h4 className={cx('search-title')}>Accounts</h4>
-            {searchResult.map((result) => (
-              <AccountItem key={result.id} data={result} />
-            ))}
-          </PopperWrapper>
-        </div>
-      )}
-      onClickOutside={handleHide}
-    >
-      <div className={cx('search')}>
-        <input
-          ref={inputRef}
-          value={searchValue}
-          placeholder="Search"
-          spellCheck={false}
-          onChange={(e) => {
-            e.target.value = e.target.value.trimStart();
-            setSearchValue(e.target.value);
-          }}
-          onFocus={() => {
-            setShowResult(true);
-          }}
-        ></input>
 
-        {!!searchValue && !loading && (
-          <button className={cx('clear')} onClick={handleClear}>
-            <FontAwesomeIcon icon={faCircleXmark} />
-          </button>
+  const handleChange = (e) => {
+    const value = e.target.value;
+    if (!value.startsWith(' ')) {
+      setSearchValue(e.target.value);
+    }
+  };
+  return (
+    //Thêm thẻ div để tạo ra một node cụ thể
+    <div>
+      <HeadlessTippy
+        visible={showResult && searchResult.length > 0}
+        appendTo={() => document.body}
+        interactive
+        render={(attrs) => (
+          <div className={cx('search-results')} tabIndex="-1" {...attrs}>
+            <PopperWrapper>
+              <h4 className={cx('search-title')}>Accounts</h4>
+              {searchResult.map((result) => (
+                <AccountItem key={result.id} data={result} />
+              ))}
+            </PopperWrapper>
+          </div>
         )}
-        {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
-        <button className={cx('search-btn')}>
-          <SearchIcon />
-        </button>
-      </div>
-    </HeadlessTippy>
+        onClickOutside={handleHide}
+      >
+        <div className={cx('search')}>
+          <input
+            ref={inputRef}
+            value={searchValue}
+            placeholder="Search"
+            spellCheck={false}
+            onChange={handleChange}
+            onFocus={() => {
+              setShowResult(true);
+            }}
+          ></input>
+
+          {!!searchValue && !loading && (
+            <button className={cx('clear')} onClick={handleClear}>
+              <FontAwesomeIcon icon={faCircleXmark} />
+            </button>
+          )}
+          {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
+          <button className={cx('search-btn')}>
+            <SearchIcon />
+          </button>
+        </div>
+      </HeadlessTippy>
+    </div>
   );
 }
 

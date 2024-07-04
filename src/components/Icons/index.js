@@ -71,7 +71,7 @@ export const FeedbackIcon = ({className, width='2rem', height='2rem'}) => (
 
 export const DarkModeIcon = ({className, width='2rem', height='2rem'}) => (
   <svg
-    class="css-2jg6he"
+    className={className}
     width={width}
     data-e2e=""
     height={height}
