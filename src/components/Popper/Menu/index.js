@@ -5,6 +5,9 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import MenuItem from './MenuItem';
 import Header from './Header';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
+
+
 const cx = classNames.bind(styles);
 const defaultFn = () => {};
 function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn }) {
@@ -53,5 +56,10 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
     </div>
   );
 }
-
+Menu.propTypes = {
+  children: PropTypes.node.isRequired,
+  items: PropTypes.array,
+  hideOnClick: PropTypes.bool,
+  onChange: PropTypes.func,
+}
 export default Menu;
