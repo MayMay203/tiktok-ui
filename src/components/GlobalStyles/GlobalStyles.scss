@@ -103,10 +103,7 @@ input, button, [tabindex]{
     border: none;
 }
 
-a[href]{
-    color: var(--text-color);
-}
-
 a{
     text-decoration: none;
+    color: var(--text-color);
 }
