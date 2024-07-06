@@ -1,13 +1,23 @@
 import config from '~/config';
 import styles from './Sidebar.module.scss';
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 import { faFileVideo, faUser } from '@fortawesome/free-regular-svg-icons';
 import { faFileVideo as faActiveFileVideo, faUser as faActiveUser } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import Menu from './Menu';
 import { MenuItem } from './Menu';
-import { ExploreIcon, HomeIcon, FriendsIcon, HomeActiveIcon, ExploreActiveIcon, FriendsActiveIcon, } from '~/components/Icons';
+import {
+  ExploreIcon,
+  HomeIcon,
+  FriendsIcon,
+  HomeActiveIcon,
+  ExploreActiveIcon,
+  FriendsActiveIcon,
+} from '~/components/Icons';
 import Image from '~/components/Image';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import FollowingAccounts from '~/components/FollowingAccounts';
 
 const cx = classNames.bind(styles);
 function Sidebar() {
@@ -46,6 +56,7 @@ function Sidebar() {
           to={'/@Nhung'}
         />
       </Menu>
+      <FollowingAccounts lable="Following accounts" />
     </aside>
   );
 }
